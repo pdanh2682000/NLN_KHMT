@@ -1,0 +1,7 @@
+clip-retrieval
+img2dataset
+autofaiss
+mtcnn
+tensorflow
+torch
+pandas

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Face Recognition</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./">Me</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="./form_find">WHO</a></li>
+        <li><a href="./film_find">WHAT</a></li>
+        <li><a href="#">WHERE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1 class="margin">Danh sách các loại phim <strong id="textHighlight">{{ name }}</strong></h1>
+  <div id="listFilm"></div>
+
+     <!--<img src="{{ url_for('static', filename=picture)}}" style="border-radius: 20%;" ></img>-->
+<!--  {% if name == 'Chi Pu' %}-->
+<!--  <img src="{{ url_for('static', filename='dummy/chi-chi-em-em-7032-1616414108.jpg')}}" style="border-radius: 20%;" ></img>-->
+
+<!--  {% else %}-->
+<!--  <img src="{{ url_for('static', filename='abcxyz.png')}}">-->
+<!--  {% endif %}-->
+  <!--<iframe src="{{ url_for('static', filename=picture)}}"
+          style="border-radius: 100%;"
+          width="640" height="480" allow="autoplay"></iframe>-->
+<!--  <h3>I'm {{ name }}</h3>-->
+</div>
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Phan Duy Anh B1812252 <a href="https://github.com/pdanh2682000" target="_blank">Github</a></p>
+</footer>
+
+<script type="text/javascript">
+
+        obj = document.getElementById("textHighlight");
+        obj.style.color = "pink";
+        setInterval(changeColor, 200);
+
+        function changeColor() {
+            if (obj.style.color == "pink") {
+                obj.style.color = "aqua";
+            } else if (obj.style.color == "aqua") {
+                obj.style.color = "orange";
+            } else if (obj.style.color == "orange") {
+                obj.style.color = "greenyellow";
+            } else {
+                obj.style.color = "pink";
+            }
+        }
+
+</script>
+<script>
+  $(document).ready(function () {
+
+
+			$.ajax({
+				url: 'http://localhost:8081/movie/{{ name }}',
+				type: 'GET',
+				dataType: 'json',
+				success: function (result) {
+					//console.log(result.results[0].title);
+					showAll(result.results);
+				},
+				error: function (error) {
+				   console.log(error);
+				}
+			});
+
+	})
+	function showAll(arrObj){
+	  var div = document.getElementById("listFilm");
+      for(var i=0; i<arrObj.length; i++){
+        div.innerHTML += "<img style='border-radius: 20%;' src='" + arrObj[i].thumbnail + "' /><br />"
+        div.innerHTML += "<h3>Tên phim: <u><em>" + arrObj[i].title + "</em></u></h3><br /><br />";
+     }
+	}
+</script>
+</body>
+</html>

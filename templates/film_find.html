@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Movie</title>
+
+<!-- Loading third party fonts -->
+<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|"
+	rel="stylesheet" type="text/css">
+
+<link href="{{ url_for('static', filename='fonts/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<!-- Loading main css file -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+
+
+	<div id="site-content">
+		<header class="site-header">
+			<div class="container">
+				<a href="/film_find" id="branding"> <img src="images/logo.png"
+					alt="" class="logo">
+					<div class="logo-copy">
+						<h1 class="site-title">DanhUy's Movie</h1>
+						<small class="site-description">Xem phim thỏa thích</small>
+					</div>
+				</a>
+				<!-- #branding -->
+
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item current-menu-item"><a href="/">Home</a></li>
+						<li class="menu-item"><a href="#">About</a></li>
+						<li class="menu-item"><a href="#">Movie reviews</a></li>
+						<li class="menu-item"><a href="#">Join us</a></li>
+						<li class="menu-item"><a href="#">Contact</a></li>
+					</ul>
+					<!-- .menu -->
+
+
+				</div>
+				<!-- .main-navigation -->
+
+
+				<div class="mobile-navigation"></div>
+			</div>
+
+		</header>
+
+		<main class="main-content">
+			<div class="container">
+
+				<form action="/handle_film_find" method="post" enctype="multipart/form-data"
+						style="padding:10px 50px 50px 400px;">
+    					<div class="input-group">
+						  <input type="file" class="form-control custom-file-input" placeholder="Search" name="image">
+
+						  <div class="input-group-btn" style="padding:10px 0 0 0;">
+							<button class="btn btn-default" type="submit">Tìm kiếm bằng hình ảnh</button>
+						  </div>
+						</div>
+				</form>
+				<div class="page">
+
+					<div class="row">
+
+
+						<div class="col-md-9">
+							<div class="slider">
+								<ul class="slides" id="slide">
+
+
+<!--									<li><a href="#"><img src="{{ url_for('static', filename='dummy/chi-chi-em-em-7032-1616414108.jpg')}}"-->
+<!--											alt="Slide 1"></a></li>-->
+
+<!--									<li><a href="#"><img src="{{ url_for('static', filename='dummy/aaraattu.jpg')}}"-->
+<!--											alt="Slide 2"></a></li>-->
+
+<!--									<li><a href="#"><img src="{{ url_for('static', filename='dummy/tPfb6Ag.jpg')}}"-->
+<!--											alt="Slide 3"></a></li>-->
+
+
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="row">
+								<div class="col-sm-6 col-md-12">
+									<div class="latest-movie">
+
+
+										<a href="#"><img src="{{ url_for('static', filename='dummy/chi-chi-em-em-7032-1616414108.jpg')}}" alt="Movie 1"></a>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-12">
+									<div class="latest-movie">
+
+										<a href="#"><img src="{{ url_for('static', filename='dummy/Venom_Let_There_Be_Carnage_VN_poster.jpg')}}" alt="Movie 2"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- .row -->
+					<div class="row" id="rows">
+
+						<script>
+
+						</script>
+
+
+<!--						<div class="col-sm-6 col-md-3">-->
+<!--							<div class="latest-movie">-->
+
+
+<!--								<a href="#"><img src="{{ url_for('static', filename='dummy/tPfb6Ag.jpg')}}" alt="Movie 3"></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="col-sm-6 col-md-3">-->
+<!--							<div class="latest-movie">-->
+
+<!--								<a href="#"><img src="{{ url_for('static', filename='dummy/rtm_poster_final_1023.jpg')}}" alt="Movie 4"></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="col-sm-6 col-md-3">-->
+<!--							<div class="latest-movie">-->
+
+
+<!--								<a href="#"><img src="{{ url_for('static', filename='dummy/aaraattu.jpg')}}" alt="Movie 5"></a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="col-sm-6 col-md-3">-->
+<!--							<div class="latest-movie">-->
+
+<!--								<a href="#"><img src="{{ url_for('static', filename='dummy/chi-chi-em-em-7032-1616414108.jpg')}}" alt="Movie 6"></a>-->
+<!--							</div>-->
+<!--						</div>-->
+					</div>
+					<!-- .row -->
+
+					<div class="row">
+						<div class="col-md-4">
+							<h2 class="section-title">Phim sắp ra mắt tháng 12</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit,
+								sed do eiusmod tempor incididunt ut labore.</p>
+							<ul class="movie-schedule">
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+							</ul>
+							<!-- .movie-schedule -->
+						</div>
+						<div class="col-md-4">
+							<h2 class="section-title">Phim sắp ra mắt tháng 11</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit,
+								sed do eiusmod tempor incididunt ut labore.</p>
+							<ul class="movie-schedule">
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+							</ul>
+							<!-- .movie-schedule -->
+						</div>
+						<div class="col-md-4">
+							<h2 class="section-title">Phim sắp ra mắt tháng 10</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit,
+								sed do eiusmod tempor incididunt ut labore.</p>
+							<ul class="movie-schedule">
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+								<li>
+									<div class="date">16/12</div>
+									<h2 class="entry-title">
+										<a href="#">Perspiciatis unde omnis</a>
+									</h2>
+								</li>
+							</ul>
+							<!-- .movie-schedule -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .container -->
+		</main>
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">About Us</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Quia tempore vitae mollitia nesciunt saepe cupiditate</p>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">Recent Review</h3>
+							<ul class="no-bullet">
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li><a href="#">Sit amet consecture</a></li>
+								<li><a href="#">Dolorem respequem</a></li>
+								<li><a href="#">Invenore veritae</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">Help Center</h3>
+							<ul class="no-bullet">
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li><a href="#">Sit amet consecture</a></li>
+								<li><a href="#">Dolorem respequem</a></li>
+								<li><a href="#">Invenore veritae</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">Join Us</h3>
+							<ul class="no-bullet">
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li><a href="#">Sit amet consecture</a></li>
+								<li><a href="#">Dolorem respequem</a></li>
+								<li><a href="#">Invenore veritae</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">Social Media</h3>
+							<ul class="no-bullet">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Twitter</a></li>
+								<li><a href="#">Google+</a></li>
+								<li><a href="#">Pinterest</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="widget">
+							<h3 class="widget-title">Newsletter</h3>
+							<form action="#" class="subscribe-form">
+								<input type="text" placeholder="Email Address">
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- .row -->
+
+				<div class="colophon">Copyright 2014 Company name, Designed by
+					Themezy. All rights reserved</div>
+			</div>
+			<!-- .container -->
+
+		</footer>
+	</div>
+	<!-- Default snippet for navigation -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		var data;
+		$.ajax({
+				url: 'http://localhost:8081/movie',
+				type: 'GET',
+				dataType: 'json',
+				success: function (result) {
+					//console.log(result.results[0].title);
+					//showAll(result.results);
+					data = result.results;
+				},
+				error: function (error) {
+				   console.log(error);
+				}
+			});
+	</script>
+	<script>
+	 $(document).ready(function () {
+
+		showAll(data);
+
+
+	})
+	function showAll(arrObj){
+		var div = document.getElementById("slide");
+		var div1 = document.getElementById("rows");
+		for(var i=0; i<arrObj.length; i++){
+			div.innerHTML += "<li><a href='#'><img width='50%' height='50%' src='" + arrObj[i].thumbnail + "' /></a></li>"
+			div1.innerHTML += "<div class='col-sm-6 col-md-3'><div class='latest-movie'><a href='#'><img src='" + arrObj[i].thumbnail + "' /></a></div></div>";
+		}
+
+	}
+</script>
+
+
+	<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js')}}"></script>
+
+	<script src="{{ url_for('static', filename='js/plugins.js')}}"></script>
+
+	<script src="{{ url_for('static', filename='js/app.js')}}"></script>
+
+
+</body>
+</html>
