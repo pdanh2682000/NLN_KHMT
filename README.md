@@ -1,5 +1,5 @@
 # Đồ án niên luận ngành Khoa học máy tính - Nhận diện đối tượng trong ảnh - camera
-Combine 2 technologies(Python and Java) to make a web to recognize objects in images
+Combine 2 technologies (Python and Java) to make a web to recognize objects in images
 - Backend: Flask Framework(Python), Spring Framework(Java)
 - Frontend: Bootstrap, JQuery, Ajax
 - Database: MySQL
